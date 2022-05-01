@@ -1,0 +1,6 @@
+*.pt
+*.pkl
+*.pyc
+env/*
+train/.ipynb_ckeckpoints/*
+**/.ipynb_checkpoints/*
