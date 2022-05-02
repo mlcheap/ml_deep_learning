@@ -1,5 +1,9 @@
-# skillab_deliveri_v1
-occupation detection for this list of languages: English,Arabic,Portuguese, German, Dutch 
+# Skillab_deliveri_v1
+occupation detection for this list of languages: English,Arabic,Portuguese, German, 
+## Requirements
+the code test on x86 system with cuda 11.3
+## Models
+you can use trained [models](https://drive.google.com/file/d/1yDgNpB_kGFGlbvb-RKglKCqPZ28Xl234/view?usp=sharing) or train you models.
 
 ## Training
 the only data we use for traning is esco data or some amount of undirect labels in training Nl,Pt,De models. esco have just one related sample per class (that just define occupation). so  because we have very few amount of data compare to number of classes (about 3000) we have to use few shot learning. for this purpose we using some of best embedding model as starting point. ("all-mpnet-base-v2", "paraphrase-multilingual-mpnet-base-v2" are two embedding model).
