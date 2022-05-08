@@ -3,6 +3,8 @@ from models.en.EnV2 import EnV2
 from models.en.En import En
 from models.ar.Ar import Ar
 from models.de.De import De
+from models.nl.Nl import Nl
+from models.pt.Pt import Pt
 from sentence_transformers import SentenceTransformer
 import os
 import pickle
@@ -74,6 +76,11 @@ def load_model(model_name, model_path, device):
         model = Ar(device)
     elif model_name == "De":
         model = De(device)
+    elif model_name == "Nl":
+        model = Nl(device)
+    elif model_name == "Pt":
+        model = Pt(device)
+
     return True
     
 
