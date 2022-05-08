@@ -42,7 +42,7 @@ Once done, run the Docker image and map the port to whatever you wish on
 your host. 
 
 ```sh
-docker run -d -p 5000:5000 --name=occupation_detection <youruser>/occupation_detection 
+docker run -d --name occupation_detection --gpus all -p 5000:80  <youruser>/occupation_detection 
 ```
 
 Verify the deployment by sending post and get request as api
