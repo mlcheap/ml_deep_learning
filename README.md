@@ -1,4 +1,4 @@
-# Skillab_deliveri_v1
+# ESCO tagging - Deep Neural Net
 occupation detection for this list of languages: English,Arabic,Portuguese, German, 
 ## Requirements
 the code test on x86 system with cuda 11.3
