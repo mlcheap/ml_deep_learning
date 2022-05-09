@@ -9,7 +9,7 @@ class Nl():
     def __init__(self, device):
         self.device = device
         self.embeder= SentenceTransformer('models/multi', device=device)
-        self.oneLayerModel = OneLayerModel(768, 3561)
+        self.oneLayerModel = OneLayerModel(768, 2940)
         self.oneLayerModel.load_state_dict(torch.load('models/nl/model.pt'))
         self.oneLayerModel.to(device)
 
