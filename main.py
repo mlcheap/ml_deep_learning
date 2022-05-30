@@ -17,7 +17,7 @@ app = Flask(__name__)
 loaded_model = ''
 model = None
 concepturis = []
-DEVICE = "cuda:0"
+DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 # return all models
 @app.route("/all-models", methods=['POST', 'GET'])
