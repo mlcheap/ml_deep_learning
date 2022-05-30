@@ -38,7 +38,6 @@ def occupation_detection():
     else:
         probs = cosine_embeds_similarity(texts)
     top_indices = get_best_indices(probs, content['topk'])
-
     return make_output(top_indices)
 
 
@@ -97,7 +96,7 @@ def get_best_indices(probablities, topk):
 
 def make_output(top_indices):
     global concepturis
-    return jsonify([concepturis[i] for i in top_indices[0]])
+    return jsonify([[concepturis[i] for i in top_indices[i]] for i in range(len(top_indices))])
 
 
 def classifier_predict_similarity(texts):
