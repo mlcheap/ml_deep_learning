@@ -1,10 +1,10 @@
 from flask import Flask, jsonify, request
-from models.en.EnV2 import EnV2
-from models.en.En import En
-from models.ar.Ar import Ar
-from models.de.De import De
-from models.nl.Nl import Nl
-from models.pt.Pt import Pt
+from models.EnV2 import EnV2
+from models.En import En
+from models.Ar import Ar
+from models.De import De
+from models.Nl import Nl
+from models.Pt import Pt
 from sentence_transformers import SentenceTransformer
 import os
 import pickle
@@ -52,7 +52,7 @@ def check_and_change_if_needed_loaded_model(model_name):
     global loaded_model, concepturis, DEVICE
     if loaded_model != model_name:
         base_path = "./models"
-        drpath = os.path.join(base_path,conf[model_name]["lang"])
+        drpath = os.path.join(base_path,"weights",conf[model_name]["lang"])
         model_path = os.path.join(drpath,"model.pt")
         if load_model(model_name, model_path,  DEVICE):
             loaded_model = model_name

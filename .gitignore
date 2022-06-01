@@ -4,3 +4,4 @@
 env/
 train/.ipynb_ckeckpoints/
 **/.ipynb_checkpoints/
+test/*
