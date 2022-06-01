@@ -8,9 +8,9 @@ from .OneLayerModel import OneLayerModel
 class Nl():
     def __init__(self, device):
         self.device = device
-        self.embeder= SentenceTransformer('weights/multi', device=device)
+        self.embeder= SentenceTransformer('./models/weights/multi', device=device)
         self.oneLayerModel = OneLayerModel(768, 2940)
-        self.oneLayerModel.load_state_dict(torch.load('weights/nl/model.pt'))
+        self.oneLayerModel.load_state_dict(torch.load('./models/weights/nl/model.pt',map_location=torch.device(device)))
         self.oneLayerModel.to(device)
 
     def classify(self, texts):
