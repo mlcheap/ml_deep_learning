@@ -5,8 +5,8 @@ import pickle
 class Ar():
 
     def load_train_embeds(self, device):
-        embeds_path  = './weights/ar/embeds.pickle'
-        model_path = './weights/ar/model_data' 
+        embeds_path  = './models/weights/ar/embeds.pickle'
+        model_path = './models/weights/ar/model_data' 
         with open(embeds_path,'rb') as f:
             train_embeds = pickle.load(f)
         train_embeds = torch.from_numpy(train_embeds).to(self.device)

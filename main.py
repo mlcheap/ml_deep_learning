@@ -12,6 +12,11 @@ import torch
 import numpy as np 
 import pandas as pd
 from configs.modelsConfig import conf 
+from flask import render_template
+
+
+
+
 app = Flask(__name__)
 
 loaded_model = ''
@@ -20,6 +25,13 @@ concepturis = []
 # DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
 DEVICE = 'cpu'
 # return all models
+
+@app.route('/', methods=['POST', 'GET'])
+@app.route('/index', methods=['POST', 'GET'])
+def index():
+    print('salam')
+    return render_template('index.html', title='Welcome')
+
 @app.route("/all-models", methods=['POST', 'GET'])
 def all_models():
     return jsonify(list(conf.keys()))
